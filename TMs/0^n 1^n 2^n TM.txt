@@ -1,0 +1,81 @@
+// Input: string of 0,1,2. Start with 'A'
+// Ouput: accepts if 0^n 1^n 2^n for some natural n
+// Example: accepts 000111222
+//
+// 0^n 1^n 2^n Algorithm
+// for Turing Machine Simulator 
+// turingmachinesimulator.com
+//
+// ------- States
+// qStart - start
+// q0 - looking for 0
+// q1 - looking for 1
+// q2 - looking for 2
+// q3 - back to start
+// q4 - verify
+// qaccept - accepting state
+//---------------------------
+
+name: 0^n 1^n 2^n
+init: qStart
+accept: qAccept
+
+qStart,A
+q0,A,>
+
+q3,A
+q0,A,>
+
+q0,_
+q4,_,<
+
+q1,_
+q4,_,<
+
+q2,_
+q4,_,<
+
+q3,_
+q4,_,<
+
+q4,x
+q4,x,<
+
+q4,A
+qAccept,A,-
+
+q0,0
+q1,x,>
+
+q0,1
+q1,1,>
+
+q1,0
+q1,0,>
+
+q1,1
+q2,x,>
+
+q2,1
+q2,1,>
+
+q2,2
+q3,x,<
+
+q3,0
+q3,0,<
+
+q3,1
+q3,1,<
+
+q0,x
+q0,x,>
+
+q1,x
+q1,x,>
+
+q2,x
+q2,x,>
+
+q3,x
+q3,x,<

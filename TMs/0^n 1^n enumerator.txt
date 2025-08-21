@@ -1,0 +1,32 @@
+// Input: none
+// Ouput: ennumerates 0^n 1^n
+//
+// --------- States -----------|
+// qStart - start
+// qZero - print 0s
+// qOne - print 1
+// qX - add an x
+// qHash - write #
+//-----------------------------|
+
+name: 0^n 1^n
+init: qStart
+accept: HALT
+
+qStart,_,_
+qZero,_,0,-,>
+
+qZero,x,_
+qZero,x,0,>,>
+
+qZero,_,_
+qOne,x,1,<,>
+
+qOne,x,_
+qOne,x,1,<,>
+
+qOne,_,_
+qHash,_,#,-,>
+
+qHash,_,_
+qZero,_,0,>,>

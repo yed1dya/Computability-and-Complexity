@@ -1,0 +1,14 @@
+// input: binary number, little endian
+
+name: x + 1
+init: qS
+accept: qY
+
+qS,_
+qY,1,-
+
+qS,0
+qY,1,-
+
+qS,1
+qS,0,>

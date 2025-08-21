@@ -1,0 +1,21 @@
+name: decide contains 001
+init: q0
+accept: qY
+
+q0,0
+q1,0,>
+
+q0,1
+q0,1,>
+
+q1,0
+q2,0,>
+
+q1,1
+q0,1,>
+
+q2,0
+q1,0,>
+
+q2,1
+qY,1,-
